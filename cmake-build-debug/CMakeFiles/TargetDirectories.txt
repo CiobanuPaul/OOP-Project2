@@ -1,0 +1,3 @@
+/home/cartofiprajiti/OOP/Tema2/cmake-build-debug/CMakeFiles/Tema2.dir
+/home/cartofiprajiti/OOP/Tema2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/cartofiprajiti/OOP/Tema2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
