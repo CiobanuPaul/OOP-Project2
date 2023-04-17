@@ -11,22 +11,22 @@
 			"cmake" : "/home/cartofiprajiti/CLion/clion-2022.3.2/bin/cmake/linux/x64/bin/cmake",
 			"cpack" : "/home/cartofiprajiti/CLion/clion-2022.3.2/bin/cmake/linux/x64/bin/cpack",
 			"ctest" : "/home/cartofiprajiti/CLion/clion-2022.3.2/bin/cmake/linux/x64/bin/ctest",
-			"root" : "/home/cartofiprajiti/CLion/clion-2022.3.2/bin/cmake/linux/x64/share/cmake-3.24"
+			"root" : "/home/cartofiprajiti/CLion/clion-2022.3.2/bin/cmake/linux/x64/share/cmake-3.25"
 		},
 		"version" : 
 		{
 			"isDirty" : false,
 			"major" : 3,
-			"minor" : 24,
+			"minor" : 25,
 			"patch" : 2,
-			"string" : "3.24.2",
+			"string" : "3.25.2",
 			"suffix" : ""
 		}
 	},
 	"objects" : 
 	[
 		{
-			"jsonFile" : "codemodel-v2-1912d26784f1a2272c06.json",
+			"jsonFile" : "codemodel-v2-18074d06aa5571a9de45.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
@@ -35,7 +35,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-dab70b1a213c10e344ab.json",
+			"jsonFile" : "cache-v2-f2b9e7102a3c034d5a84.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -44,7 +44,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cmakeFiles-v1-99881c5932fc65cd06fc.json",
+			"jsonFile" : "cmakeFiles-v1-9311c49812922f8e8cd9.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -66,7 +66,7 @@
 	{
 		"cache-v2" : 
 		{
-			"jsonFile" : "cache-v2-dab70b1a213c10e344ab.json",
+			"jsonFile" : "cache-v2-f2b9e7102a3c034d5a84.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -76,7 +76,7 @@
 		},
 		"cmakeFiles-v1" : 
 		{
-			"jsonFile" : "cmakeFiles-v1-99881c5932fc65cd06fc.json",
+			"jsonFile" : "cmakeFiles-v1-9311c49812922f8e8cd9.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -86,7 +86,7 @@
 		},
 		"codemodel-v2" : 
 		{
-			"jsonFile" : "codemodel-v2-1912d26784f1a2272c06.json",
+			"jsonFile" : "codemodel-v2-18074d06aa5571a9de45.json",
 			"kind" : "codemodel",
 			"version" : 
 			{

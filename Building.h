@@ -5,6 +5,7 @@
 #ifndef TEMA2_BUILDING_H
 #define TEMA2_BUILDING_H
 #include "Room.h"
+#include "NotAValidRoom.h"
 #include <iostream>
 #include <memory>
 #include <vector>
@@ -17,13 +18,14 @@ protected:
     std::vector<std::vector<std::shared_ptr<Room>>> floors;
     int nrParkingLots;
     static int nrBuildings;
+    virtual void readRoomOpt();
 public:
     Building();
     virtual void read() = 0;
     virtual void print() = 0;
-    virtual void readOpt();
     virtual ~Building() = 0;
     static int getNrBuildings();
+    static void readBuildingOpt();
 };
 
 

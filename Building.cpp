@@ -19,7 +19,7 @@ Building::Building(){
 
 Building::~Building() {}
 
-void Building::readOpt() {
+void Building::readRoomOpt() {
     cout<<"Choose an option:\n"
           "1) Office\n"
           "2) Living Room\n"
@@ -43,7 +43,7 @@ void Building::read() {
         for(int j=0; j<nr; j++) {
             cout<<"\nRoom "<<j+1<<":\n";
             int opt;
-            readOpt();
+            readRoomOpt();
             cin>>opt;
             shared_ptr<Room> q;
             switch(opt) {
@@ -68,7 +68,7 @@ void Building::read() {
                     break;
                 }
                 default:
-                    throw;
+                    throw NotAValidRoom();
             }
             q->setBuilding(this);
             floors[i].push_back(q);
@@ -96,4 +96,11 @@ void Building::print(){
 
 int Building::getNrBuildings() {
     return nrBuildings;
+}
+
+void Building::readBuildingOpt() {
+    cout<<"Choose an option:\n"
+          "1) House"
+          "2) Institution"
+          "3) Residence Hall";
 }
