@@ -1,10 +1,12 @@
 #include <iostream>
 #include <vector>
+#include <typeinfo>
 #include "House.h"
 #include "Building.h"
 #include "Institution.h"
 #include "ResidenceHall.h"
 #include "NotAValidBuilding.h"
+
 using namespace std;
 int Building::nrBuildings = 0;
 int main() {
@@ -36,6 +38,12 @@ int main() {
                     throw NotAValidBuilding();
             }
             buildings[i]->read();
+            try { //checking if the building is a house. then it sets a random color
+                auto ref = dynamic_cast<House &>(*buildings[i]);
+                ref.generateColour();
+                cout << "The house's color will be: " << ref.getColor()<<"\n";
+            }
+            catch(bad_cast&){}
             cout << "\n";
         }
         catch (NotAValidRoom &e) {
@@ -50,7 +58,14 @@ int main() {
         }
     }
 
-    for(auto it: buildings)
+    cout<<"Type 'ok' to print all the buildings.";
+    string s;
+    cin>>s;
+    cout<<"The registered buildings: \n";
+    for(auto it: buildings) {
         it->print();
-    return 0;
+        delete it;
+        cout<<"Type 'ok' to continue";
+        cin>>s;
+    }    return 0;
 }

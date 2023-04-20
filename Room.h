@@ -2,11 +2,12 @@
 // Created by cartofiprajiti on 13.04.2023.
 //
 
+
 #ifndef TEMA2_ROOM_H
 #define TEMA2_ROOM_H
+#include "Building.h"
 #include <iostream>
 #include <memory>
-#include "Building.h"
 
 class Room{
 protected:

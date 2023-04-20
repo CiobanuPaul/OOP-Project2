@@ -16,3 +16,12 @@ void House::print() {
     Building::print();
     std::cout<<"House owner name: "; std::cout<<owner<<"\n\n";
 }
+
+void House::generateColour() {
+    srand(time(nullptr));
+    color = Colors(rand()%9);
+}
+
+Colors House::getColor() const {
+    return color;
+}
