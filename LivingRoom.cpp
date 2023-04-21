@@ -5,7 +5,7 @@
 #include "LivingRoom.h"
 using namespace std;
 
-LivingRoom::~LivingRoom() {}
+LivingRoom::~LivingRoom() = default;
 
 void LivingRoom::read() {
     Room::read();
@@ -14,7 +14,7 @@ void LivingRoom::read() {
     cin.get();
 }
 
-void LivingRoom::print() {
+void LivingRoom::print() const{
     cout<<"Living room:\n";
     Room::print();
     cout<<"Has table? (1/0): "; cout<<hasTable<<"\n";

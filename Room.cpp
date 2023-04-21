@@ -5,10 +5,10 @@
 #include "Room.h"
 using namespace std;
 
-Room::~Room(){}
+Room::~Room() = default;
 
-void Room::setRnumber(int rnumber) {
-    Room::rnumber = rnumber;
+void Room::setRnumber(int rnumber_) {
+    rnumber = rnumber_;
 }
 
 void Room::read(){
@@ -17,11 +17,11 @@ void Room::read(){
     cin.get();
 }
 
-void Room::print() {
+void Room::print() const{
     cout<<"Room area: "; cout<<area<<"\n";
     cout<<"Maximum capacity: "; cout<<capacity<<"\n";
 }
 
-void Room::setBuilding(const weak_ptr<Building> &building) {
-    Room::building = building;
+void Room::setBuilding(const weak_ptr<Building> &building_) {
+    building = building_;
 }

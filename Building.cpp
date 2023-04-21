@@ -15,11 +15,11 @@ using namespace std;
 Building::Building(){
     nrrooms = 0;
     nrBuildings++;
-};
+}
 
-Building::~Building() {}
+Building::~Building() = default;
 
-void Building::readRoomOpt() {
+void Building::readRoomOpt() const{
     cout<<"Choose an option:\n"
           "1) Office\n"
           "2) Living Room\n"
@@ -28,7 +28,7 @@ void Building::readRoomOpt() {
           "5) Kitchen\n";
 }
 
-void Building::read() {
+void Building::read(const shared_ptr<Building>& this1) {
     cout<<"Name: "; getline(cin, name);
     cout<<"Adress: "; getline(cin, adress);
     cout<<"Area in meters square: "; cin>>area;
@@ -70,7 +70,7 @@ void Building::read() {
                 default:
                     throw NotAValidRoom();
             }
-            q->setBuilding(this);
+            q->setBuilding(this1);
             floors[i].push_back(q);
             q->setRnumber(j+1);
             q->read();
@@ -80,27 +80,27 @@ void Building::read() {
     cin.get();
 }
 
-void Building::print(){
+void Building::print() const{
     cout<<"Name: "<<name<<"\n";
     cout<<"Area: "<<area<<"\n";
     cout<<"Adress: "<<adress<<"\n";
     cout<<"Number of rooms: "<<nrrooms<<"\n";
     cout<<"Number of parking lots: "<<nrParkingLots<<"\n\n";
     int i = 1;
-    for(auto floor: floors) {
+    for(const auto& floor: floors) {
         cout<<"Floor "<<i++<<"\n\n";
-        for (auto room: floor)
+        for (const auto& room: floor)
             room->print(), cout<<"\n";
     }
 }
 
-int Building::getNrBuildings() {
+int Building::getNrBuildings(){
     return nrBuildings;
 }
 
 void Building::readBuildingOpt() {
     cout<<"Choose an option:\n"
-          "1) House"
-          "2) Institution"
-          "3) Residence Hall";
+          "1) House\n"
+          "2) Institution\n"
+          "3) Residence Hall\n";
 }

@@ -5,9 +5,11 @@
 
 #ifndef TEMA2_ROOM_H
 #define TEMA2_ROOM_H
-#include "Building.h"
+//#include "Building.h"
 #include <iostream>
 #include <memory>
+
+class Building;
 
 class Room{
 protected:
@@ -18,7 +20,7 @@ protected:
 
 public:
     virtual void read() = 0;
-    virtual void print() = 0;
+    virtual void print() const = 0;
     virtual ~Room() = 0;
 
     void setRnumber(int rnumber);

@@ -4,7 +4,7 @@
 
 #include "Toilet.h"
 using namespace std;
-Toilet::~Toilet() {}
+Toilet::~Toilet() = default;
 
 void Toilet::read() {
     Room::read();
@@ -13,7 +13,7 @@ void Toilet::read() {
     cin.get();
 }
 
-void Toilet::print() {
+void Toilet::print() const{
     cout<<"Toilet:\n";
     Room::print();
     cout<<"Has shower? (1/0): "; cout<<hasShower<<"\n";

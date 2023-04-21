@@ -14,7 +14,7 @@ public:
 
     void read() override;
 
-    void print() override;
+    void print() const override;
 };
 
 

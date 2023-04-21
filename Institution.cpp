@@ -4,16 +4,16 @@
 
 #include "Institution.h"
 
-Institution::~Institution(){}
+Institution::~Institution() = default;
 
-void Institution::read() {
-    Building::read();
+void Institution::read(const std::shared_ptr<Building>& b) {
+    Building::read(b);
     std::cout<<"Director's name: "; getline(std::cin, director);;
     std::cout<<"\n";
 }
 
-void Institution::print() {
-    std::cout<<"Institution:\n";
+void Institution::print() const{
+    std::cout<<"INSTITUTION:\n\n";
     Building::print();
     std::cout<<"Director's name: "; std::cout<<director<<"\n\n";
 }

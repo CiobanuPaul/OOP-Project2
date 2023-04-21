@@ -5,7 +5,7 @@
 #include "Bedroom.h"
 using namespace std;
 
-Bedroom::~Bedroom(){}
+Bedroom::~Bedroom() = default;
 
 void Bedroom::read() {
     Room::read();
@@ -14,7 +14,7 @@ void Bedroom::read() {
     cin.get();
 }
 
-void Bedroom::print() {
+void Bedroom::print() const{
     cout<<"Bedroom:\n";
     Room::print();
     cout<<"Number of beds: "; cout<<nrbeds<<"\n";

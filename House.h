@@ -13,12 +13,12 @@ class House : public Building{
     std::string owner;
     Colors color;
 public:
-    void read() override;
-    void print() override;
+    void read(const std::shared_ptr<Building>&) override;
+    void print() const override;
     ~House() override;
     void generateColour();
 
-    Colors getColor() const;
+    [[nodiscard]] const char* getColor() const;
 };
 
 

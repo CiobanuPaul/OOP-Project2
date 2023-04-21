@@ -11,8 +11,8 @@ class ResidenceHall : public Building{
     bool isPrivate;
 public:
     ~ResidenceHall() override;
-    void read() override;
-    void print() override;
+    void read(const std::shared_ptr<Building>& b) override;
+    void print() const override;
 };
 
 

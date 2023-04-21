@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <typeinfo>
 #include "House.h"
 #include "Building.h"
 #include "Institution.h"
@@ -10,7 +9,7 @@
 using namespace std;
 int Building::nrBuildings = 0;
 int main() {
-    vector<Building*> buildings;
+    vector<shared_ptr<Building>> buildings;
     int n;
     cout<<"Insert the number of buildings you wish to register: ";
     cin>>n;
@@ -23,23 +22,23 @@ int main() {
             cin.get();
             switch (opt) {
                 case 1: {
-                    buildings.push_back(new House());
+                    buildings.push_back(make_shared<House>());
                     break;
                 }
                 case 2: {
-                    buildings.push_back(new Institution());
+                    buildings.push_back(make_shared<Institution>());
                     break;
                 }
                 case 3: {
-                    buildings.push_back(new ResidenceHall());
+                    buildings.push_back(make_shared<ResidenceHall>());
                     break;
                 }
                 default:
                     throw NotAValidBuilding();
             }
-            buildings[i]->read();
+            buildings[i]->read(buildings[i]); //because you cannot convert 'this' to a shared pointer too easily
             try { //checking if the building is a house. then it sets a random color
-                auto ref = dynamic_cast<House &>(*buildings[i]);
+                auto& ref = dynamic_cast<House&>(*buildings[i]);
                 ref.generateColour();
                 cout << "The house's color will be: " << ref.getColor()<<"\n";
             }
@@ -47,7 +46,6 @@ int main() {
             cout << "\n";
         }
         catch (NotAValidRoom &e) {
-            delete buildings.back();
             buildings.pop_back();
             i--;
             cout << e.what() << "\nTry again!\n";
@@ -58,14 +56,14 @@ int main() {
         }
     }
 
-    cout<<"Type 'ok' to print all the buildings.";
+    cout<<"Type 'ok' to print all the buildings.\n";
     string s;
     cin>>s;
-    cout<<"The registered buildings: \n";
-    for(auto it: buildings) {
+    cout<<"\nThe registered buildings: \n\n";
+    for(const auto& it: buildings) {
         it->print();
-        delete it;
-        cout<<"Type 'ok' to continue";
+        cout<<"Type 'ok' to continue\n";
         cin>>s;
+        cout<<"\n\n";
     }    return 0;
 }

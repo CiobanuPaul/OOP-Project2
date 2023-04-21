@@ -4,7 +4,7 @@
 
 #include "Kitchen.h"
 using namespace std;
-Kitchen::~Kitchen() {}
+Kitchen::~Kitchen() = default;
 
 void Kitchen::read() {
     Room::read();
@@ -15,7 +15,7 @@ void Kitchen::read() {
     cin.get();
 }
 
-void Kitchen::print() {
+void Kitchen::print() const{
     cout<<"Kitchen:\n";
     Room::print();
     cout<<"Has table? (1/0): "; cout<<hasTable<<"\n";

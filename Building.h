@@ -18,11 +18,11 @@ protected:
     std::vector<std::vector<std::shared_ptr<Room>>> floors;
     int nrParkingLots;
     static int nrBuildings;
-    virtual void readRoomOpt();
+    virtual void readRoomOpt() const;
 public:
     Building();
-    virtual void read() = 0;
-    virtual void print() = 0;
+    virtual void read(const std::shared_ptr<Building>&) = 0;
+    virtual void print() const = 0;
     virtual ~Building() = 0;
     static int getNrBuildings();
     static void readBuildingOpt();

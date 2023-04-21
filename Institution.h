@@ -10,8 +10,8 @@ class Institution : public Building{
     std::string director;
 public:
     ~Institution() override;
-    void read() override;
-    void print() override;
+    void read(const std::shared_ptr<Building>&) override;
+    void print() const override;
 };
 
 

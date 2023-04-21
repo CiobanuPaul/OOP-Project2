@@ -4,7 +4,7 @@
 
 #include "Office.h"
 using namespace std;
-Office::~Office() {}
+Office::~Office() = default;
 
 void Office::read() {
     Room::read();
@@ -13,7 +13,7 @@ void Office::read() {
     cin.get();
 }
 
-void Office::print() {
+void Office::print() const{
     cout<<"Office:\n";
     Room::print();
     cout<<"Has desk?: "; cout<<hasDesk<<"\n";
